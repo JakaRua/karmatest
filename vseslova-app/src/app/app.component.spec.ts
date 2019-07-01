@@ -4,12 +4,16 @@ import { AppComponent } from './app.component';
 import {NumberOfVowels} from "./shared/services/count/numberOfVowels";
 import {NumberOfConsonants} from "./shared/services/count/numberOfConsonants";
 import {NumberOfSigns} from "./shared/services/count/numberOfSigns";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {MaterialModule} from "./material-module";
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        BrowserAnimationsModule,
+        MaterialModule
       ],
       declarations: [
         AppComponent
@@ -27,17 +31,5 @@ describe('AppComponent', () => {
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   });
-  //
-  // it(`should have as title 'vseslova-app'`, () => {
-  //   const fixture = TestBed.createComponent(AppComponent);
-  //   const app = fixture.debugElement.componentInstance;
-  //   expect(app.title).toEqual('vseslova-app');
-  // });
 
-  // it('should render title in a h1 tag', () => {
-  //   const fixture = TestBed.createComponent(AppComponent);
-  //   fixture.detectChanges();
-  //   const compiled = fixture.debugElement.nativeElement;
-  //   expect(compiled.querySelector('h1').textContent).toContain('Welcome to vseslova-app!');
-  // });
 });

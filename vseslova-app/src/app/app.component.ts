@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { NumberOfVowels } from './shared/services/count/numberOfVowels';
 import { NumberOfConsonants } from './shared/services/count/numberOfConsonants';
 import { NumberOfSigns } from './shared/services/count/numberOfSigns';
-import {} from ''
+import { NgxColorConsoleLogService } from '../../node_modules/ngx-color-console-log/src/lib/ngx-color-console-log.service';
+
 
 @Component({
   selector: 'app-root',
@@ -19,7 +20,8 @@ export class AppComponent {
   constructor(
       private numberOfVowels: NumberOfVowels,
       private numberOfConsonants: NumberOfConsonants,
-      private numberOfSigns: NumberOfSigns
+      private numberOfSigns: NumberOfSigns,
+    //  private colorConsoleLogService: NgxColorConsoleLogService,
   ){
 
   }
@@ -30,5 +32,6 @@ export class AppComponent {
     this.consonants = this.numberOfConsonants.count(this.val);
     this.signs = this.numberOfSigns.count(this.val);
     this.length = this.val.length;
+    //this.colorConsoleLogService.clColor('red', 'black');
   }
 }
